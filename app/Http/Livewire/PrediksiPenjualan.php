@@ -25,6 +25,9 @@ class PrediksiPenjualan extends Component
     public $tauhn = [];
     public function render()
     {
+        if (!auth()->user()) {
+            abort(403);
+        }
         $this->barang = Barang::latest()->get();
         return view('livewire.prediksi-penjualan');
     }

@@ -1,5 +1,5 @@
 <div wire:ignore.self
-    class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+    class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto shadow-md shadow-gray-300"
     id="{{ $idModals }}" tabindex="-1" aria-labelledby="exampleModalXlLabel">
     <div class="modal-dialog {{ $sizeModals }} modal-dialog-centered relative w-auto pointer-events-none">
         <div

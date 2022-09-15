@@ -16,6 +16,7 @@ class CreatePenjualansTable extends Migration
         Schema::create('penjualans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('barang_id');
+            $table->foreignId('user_id');
             $table->timestamps();
         });
     }

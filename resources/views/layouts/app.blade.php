@@ -10,15 +10,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
         integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style2.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>@yield('title')</title>
     @livewireStyles
 </head>
 
-<body>
-    <div class="flex">
-        @livewire('snippets.sidebar')
-        <div class="ml-24 md:ml-44 lg:ml-72 w-full">
+<body class="bg-slate-30 antialiased bg-slate-300/50">
+    <div class="flex  ">
+        {{-- @livewire('snippets.sidebar') --}}
+        <div class="w-full ">
             {{ $slot }}
         </div>
     </div>

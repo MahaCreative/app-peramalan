@@ -3,8 +3,10 @@
 use App\Http\Controllers\Import;
 use App\Http\Livewire\Dashboard;
 use App\Http\Livewire\DataBarang;
+use App\Http\Livewire\Home;
 use App\Http\Livewire\PenjualanBarang;
 use App\Http\Livewire\PrediksiPenjualan;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +20,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('', Home::class)->name('home');
+
+
+Route::get('logout', function () {
+
+    Auth::logout();
+    return redirect()->route('home');
+})->name('logout');
 Route::get('dashboard', Dashboard::class)->name('dashboard');
 Route::get('data-barang', DataBarang::class)->name('data-barang');
 Route::get('penjualan-barang', PenjualanBarang::class)->name('penjualan-barang');

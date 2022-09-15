@@ -1,4 +1,4 @@
-<div class="ml-4">
+<div class="ml-4 px-24 my-8">
     @component('components.snippets.modals',
         ['title' => $titleModal, 'idModals' => 'modalsLarge', 'sizeModals' => $sizeModal])
         @if ($statusModal === 'tambah barang')
@@ -25,11 +25,11 @@
     <div class=" border lg:text-base text-sm border-gray-400/50 shadow-md shadow-gray-500/50 rounded-md p-3 my-2 mx-2">
         <div class="flex gap-x-2 px-4 py-2 border-b-4 border-orange-500 w-full items-center ">
             <div class="flex items-center gap-x-2">
-                <a href="">
+                <a href="{{ route('dashboard') }}">
                     <i
                         class="bi bi-house-door-fill text-orange-500 text-[16pt] p-1 shadow-md shadow-gray-400/50 border"></i>
                 </a>
-                <a href="" class="text-[16pt] hover:text-orange-400 transitions">
+                <a href="{{ route('dashboard') }}" class="text-[16pt] hover:text-orange-400 transitions">
                     Dashboard
                 </a>
                 <a href="" class="text-[16pt] hover:text-orange-400 transitions">

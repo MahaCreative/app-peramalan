@@ -17,6 +17,7 @@ class CreateBarangsTable extends Migration
             $table->id();
             $table->string('nama_barang');
             $table->string('kode_barang');
+            $table->foreignId('user_id');
             $table->timestamps();
         });
     }

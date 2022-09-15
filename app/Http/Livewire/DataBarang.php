@@ -25,6 +25,10 @@ class DataBarang extends Component
 
     public function mount()
     {
+        if (!auth()->user()) {
+            abort(403);
+        }
+        // dd(auth()->user());
     }
 
     public function updated($propertyName)
@@ -37,9 +41,9 @@ class DataBarang extends Component
     {
         if ($this->search === '') {
 
-            $this->barang = Barang::latest()->get();
+            $this->barang = Barang::where('user_id', auth()->user()->id)->latest()->get();
         } else {
-            $this->barang = Barang::where('nama_barang', 'like', '%' . $this->search . '%')
+            $this->barang = Barang::where('user_id', auth()->user()->id)->where('nama_barang', 'like', '%' . $this->search . '%')
                 ->orWhere('kode_barang', 'like', '%' . $this->search . '%')->latest()->get();
         }
         return view('livewire.data-barang');
@@ -58,7 +62,7 @@ class DataBarang extends Component
     public function submitHandler()
     {
         $attr = $this->validate();
-
+        $attr['user_id'] = auth()->user()->id;
         $this->barang = Barang::create($attr);
         $this->info('menambah');
         $this->resetPage();
@@ -97,6 +101,7 @@ class DataBarang extends Component
     {
         return redirect()->route('penjualan-barang')->with('idBarang', $id);
     }
+
 
 
     public function resetPage()

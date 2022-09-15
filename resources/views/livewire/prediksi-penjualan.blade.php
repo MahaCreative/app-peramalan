@@ -1,4 +1,4 @@
-<div class="ml-4">
+<div class="ml-4 px-24 my-8">
     @component('components.snippets.modals',
         ['title' => $titleModal, 'idModals' => 'modalsLarge', 'sizeModals' => $sizeModal])
         <form action="" wire:submit.prevent="forecastPeriode" class="w-full">
@@ -18,9 +18,7 @@
                             <table class="min-w-full">
                                 <thead class="border-b border-gray-400/50">
                                     <tr>
-                                        <th scope="col" class="text-sm font-medium text-gray-900 px-6 text-left">
-                                            Nama Barang
-                                        </th>
+
                                         <th scope="col" class="text-sm font-medium text-gray-900 px-6 text-left">
                                             Tahun Prediksi
                                         </th>
@@ -49,9 +47,7 @@
                                     @for ($i = 0; $i < count($dataPrediksi['tahun']); $i++)
                                         <tr wire:click="selectProduk()"
                                             class="border-b border-gray-400/50 hover:bg-cyan-300 hover:cursor-pointer transitions">
-                                            <td class="text-sm text-gray-900 font-light px-6 py-1 whitespace-nowrap">
-                                                {{-- {{ $item->kode_barang }} --}}
-                                            </td>
+
                                             <td class="text-sm text-gray-900 font-light px-6 py-1 whitespace-nowrap">
                                                 <p>{{ $dataPrediksi['tahun'][$i] }}</p>
                                             </td>
@@ -109,11 +105,11 @@
     <div class=" border lg:text-base text-sm border-gray-400/50 shadow-md shadow-gray-500/50 rounded-md p-3 my-2 mx-2">
         <div class="flex gap-x-2 px-4 py-2 border-b-4 border-orange-500 w-full items-center ">
             <div class="flex items-center gap-x-2">
-                <a href="">
+                <a href="{{ route('dashboard') }}">
                     <i
                         class="bi bi-house-door-fill text-orange-500 text-[16pt] p-1 shadow-md shadow-gray-400/50 border"></i>
                 </a>
-                <a href="" class="text-[16pt] hover:text-orange-400 transitions">
+                <a href="{{ route('dashboard') }}" class="text-[16pt] hover:text-orange-400 transitions">
                     Dashboard
                 </a>
                 <a href="" class="text-[16pt] hover:text-orange-400 transitions">

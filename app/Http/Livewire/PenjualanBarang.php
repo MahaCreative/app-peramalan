@@ -28,6 +28,9 @@ class PenjualanBarang extends Component
     public $showGraph = false;
     public function mount()
     {
+        if (!auth()->user()) {
+            abort(403);
+        }
         $this->idBarang = session()->get('idBarang');
         // if ($this->idBarang == null) {
         //     abort(403);
@@ -180,5 +183,11 @@ class PenjualanBarang extends Component
     {
         // dd($this->file);
         Excel::import(new DetailPenjualanImport($this->idBarang), $this->file);
+        $this->dataBarang = Barang::findOrfail($this->idBarang);
+    }
+    public function deleteAll()
+    {
+        $this->dataBarang->detail_penjualan()->delete();
+        $this->dataBarang = Barang::findOrfail($this->idBarang);
     }
 }

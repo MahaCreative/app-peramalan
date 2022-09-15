@@ -1,4 +1,4 @@
-<div class="ml-4">
+<div class="ml-4 px-24 my-8">
     @component('components.snippets.modals',
         ['title' => $titleModal, 'idModals' => 'modalsLarge', 'sizeModals' => $sizeModal])
         <form action="" wire:submit.prevent="submitHandler" class="w-full">
@@ -31,11 +31,11 @@
     <div class=" border lg:text-base text-sm border-gray-400/50 shadow-md shadow-gray-500/50 rounded-md p-3 my-2 mx-2">
         <div class="flex gap-x-2 px-4 py-2 border-b-4 border-orange-500 w-full items-center ">
             <div class="flex items-center gap-x-2">
-                <a href="">
+                <a href="{{ route('dashboard') }}">
                     <i
                         class="bi bi-house-door-fill text-orange-500 text-[16pt] p-1 shadow-md shadow-gray-400/50 border"></i>
                 </a>
-                <a href="" class="text-[16pt] hover:text-orange-400 transitions">
+                <a href="{{ route('dashboard') }}" class="text-[16pt] hover:text-orange-400 transitions">
                     Dashboard
                 </a>
                 <a href="" class="text-[16pt] hover:text-orange-400 transitions">
@@ -52,11 +52,15 @@
                 <button type="button" wire:click='trainData'
                     class="border border-gray-400/50 shadow rounded-md p-2 hover:cursor-pointer hover:bg-gray-500/50 hover:text-white transition duration-300 ease-in">Train
                     Data</button>
+                <button type="button" wire:click='deleteAll'
+                    class="border border-red-400/50 shadow rounded-md p-2 hover:cursor-pointer hover:bg-red-500/50 hover:text-white transition duration-300 ease-in">Delete
+                    All
+                    Data</button>
             </div>
-            <div class="flex gap-x-2  items-center justify-end">
+            {{-- <div class="flex gap-x-2  items-center justify-end">
                 <input wire:model='search' type="text" placeholder="Search..."
                     class="border border-gray-400/50 rounded-md px-2 py-1 mb-2">
-            </div>
+            </div> --}}
 
         </div>
 

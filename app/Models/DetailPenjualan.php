@@ -11,6 +11,6 @@ class DetailPenjualan extends Model
     protected $guarded = [];
     public function barang()
     {
-        return $this->hasOne(Barang::class);
+        return $this->belongsTo(Barang::class);
     }
 }
