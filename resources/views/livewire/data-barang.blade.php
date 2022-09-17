@@ -18,7 +18,8 @@
                         <p class="text-red-500 italic text-sm">{{ $message }}</p>
                     @enderror
                 </div>
-                <button type="submit" class="button hover:bg-orange-500 hover:text-white">Submit</button>
+                <button type="submit"
+                    class="button hover:bg-orange-500 hover:text-white">{{ $editStatus ? 'Update' : 'Submit' }}</button>
             </form>
         @endif
     @endcomponent
