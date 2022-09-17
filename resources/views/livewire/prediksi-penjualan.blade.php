@@ -158,7 +158,7 @@
                                             {{ $item->kode_barang }}
                                         </td>
                                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                            <p>{{ $item->nama_barang }}</p>
+                                            {{ $item->nama_barang }}
                                         </td>
                                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                             <button class="button hover:bg-orange-500 hover:text-white"
@@ -183,10 +183,12 @@
             </div>
         </div>
         <div class="mx-4">
-            <button type="submit" data-bs-toggle="modal" data-bs-target="#modalsLarge"
-                wire:click="displayModal('periode sebelumnya')"
-                class="border border-gray-400/50 shadow rounded-md p-2 hover:cursor-pointer hover:bg-gray-500/50 hover:text-white transition duration-300 ease-in">Lihat
-                Hasil Prediksi Periode Sebelumnya</button>
+            @if ($button)
+                <button type="submit" data-bs-toggle="modal" data-bs-target="#modalsLarge"
+                    wire:click="displayModal('periode sebelumnya')"
+                    class="border border-gray-400/50 shadow rounded-md p-2 hover:cursor-pointer hover:bg-gray-500/50 hover:text-white transition duration-300 ease-in">Lihat
+                    Hasil Prediksi Periode Sebelumnya</button>
+            @endif
         </div>
         <div
             class=" border lg:text-base text-sm border-gray-400/50 shadow-md shadow-gray-500/50 rounded-md p-3 my-2 mx-2">

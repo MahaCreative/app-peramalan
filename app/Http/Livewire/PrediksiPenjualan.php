@@ -23,6 +23,7 @@ class PrediksiPenjualan extends Component
     public $forecastNext = [];
     public $predictMonth = 12;
     public $tauhn = [];
+    public $button = false;
     public function render()
     {
         if (!auth()->user()) {
@@ -212,6 +213,7 @@ class PrediksiPenjualan extends Component
 
     public function forecastPeriode()
     {
+        $this->button = true;
         if ($this->predictMonth <= 12) {
             $nextForec = [];
             $tahun = ['jan', 'feb', 'mar', 'apr', 'mei', 'jun', 'jul', 'agu', 'sep', 'oct', 'nov', 'dec',];
