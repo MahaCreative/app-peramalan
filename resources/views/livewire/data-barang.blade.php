@@ -103,7 +103,9 @@
                                                                 <button wire:click="lihatPenjualan({{ $item->id }})"
                                                                     class="bg-orange-400 text-white py-1 px-3 hover:cursor-pointer rounded-md hover:bg-orange-500 duration-300 transition">Lihat
                                                                     Penjualan</button>
-                                                                <button wire:click="edit({{ $item }})"
+                                                                <button data-bs-toggle="modal"
+                                                                    data-bs-target="#modalsLarge"
+                                                                    wire:click="edit({{ $item }})"
                                                                     class="bg-red-400 text-white py-1 px-3 hover:cursor-pointer rounded-md hover:bg-red-500 duration-300 transition">Edit</button>
                                                                 <button wire:click="delete({{ $item->id }})"
                                                                     class="bg-red-400 text-white py-1 px-3 hover:cursor-pointer rounded-md hover:bg-red-500 duration-300 transition">Delete</button>
